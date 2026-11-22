@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171717">
+<meta name="description" content="__DESCRIPTION__">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="__DESCRIPTION__">
+__OG_IMAGE__
+__CANONICAL__
+__ROBOTS__
+<title>__TITLE__ · TapViz</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/card/style.css">
+</head>
+<body class="theme-__THEME__">
+<main class="profile-shell">
+<article class="profile-card __CARD_CLASS__" __BACKGROUND_STYLE__>
+  __COVER_HTML__
+  <div class="profile-avatar-wrap">
+    __AVATAR_HTML__
+  </div>
+  <header class="profile-head">
+    <h1>__NAME__</h1>
+    __ROLE_HTML__
+    __ORGANIZATION_HTML__
+  </header>
+
+  <div class="profile-actions">
+    <a class="contact-save" href="__VCF_URL__">
+      <span class="contact-plus">＋</span>
+      <span class="contact-save-text">
+        <b>Сохранить контакт</b>
+        <small>Добавить в адресную книгу устройства</small>
+      </span>
+      <span class="contact-arrow">↓</span>
+    </a>
+  </div>
+
+  __BUTTONS_HTML__
+
+  <hr class="card-divider">
+
+  <section class="profile-section">
+    <h2 class="profile-section-title">Обо мне</h2>
+    <p class="profile-bio">__BIO__</p>
+  </section>
+
+  <section class="profile-section">
+    <h2 class="profile-section-title">Портфолио</h2>
+    <div class="portfolio-grid">
+      <p class="portfolio-empty">Здесь будут отображаться проекты и работы.</p>
+    </div>
+  </section>
+
+  <footer class="profile-powered">
+    __POWERED__
+  </footer>
+</article>
+</main>
+<script src="/card/script.js" defer></script>
+</body>
+</html>

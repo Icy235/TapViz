@@ -1,0 +1,22 @@
+{
+  "name": "tapviz",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Digital business cards with stable public profiles and QR sharing",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --watch server.mjs",
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "generate:icons": "node scripts/fetch-icons.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "simple-icons": "^16.36.0"
+  }
+}

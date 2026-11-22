@@ -1,0 +1,30 @@
+services:
+  tapviz:
+    build: .
+    image: tapviz:latest
+    container_name: tapviz
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 4173
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-https://tapviz.vorlan.ru}
+      DATABASE_PATH: /app/.data/tapviz.sqlite
+      SESSION_TTL_DAYS: ${SESSION_TTL_DAYS:-30}
+      FREE_CARD_LIMIT: ${FREE_CARD_LIMIT:-3}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-}
+      ANDROID_APP_URL: ${ANDROID_APP_URL:-}
+      TRUST_PROXY: "true"
+    ports:
+      - "127.0.0.1:4173:4173"
+    volumes:
+      - tapviz-data:/app/.data
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:4173/v1/plans').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 4s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  tapviz-data:
